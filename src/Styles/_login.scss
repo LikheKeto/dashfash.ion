@@ -1,0 +1,35 @@
+body {
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+}
+.login-box {
+	height: 90vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.box {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 50vh;
+	background-color: $highlight;
+	border-radius: 25px;
+	width: 20rem;
+	label {
+		width: 90%;
+		input {
+			background-color: $main_color;
+			width: 100%;
+			display: block;
+			outline: none;
+			padding: 0.5rem;
+			border: none;
+			border-radius: 12px;
+			color: $text;
+		}
+	}
+}

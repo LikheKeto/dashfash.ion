@@ -1,0 +1,19 @@
+.navigation-bar {
+	display: flex;
+	z-index: 10;
+	background-color: $main_color;
+	width: 100%;
+	position: fixed;
+	button {
+		background-color: $main_color;
+		border: none;
+		outline: none;
+		height: 3rem;
+		&:hover {
+			background-color: $highlight;
+		}
+	}
+	.active {
+		background-color: $highlight;
+	}
+}

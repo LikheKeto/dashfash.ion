@@ -1,0 +1,73 @@
+$transparent: rgba(35, 31, 32, 0.5);
+
+.carousal {
+	overflow-x: hidden;
+	margin-top: 1rem;
+	width: 100%;
+	height: 90vh;
+	background-color: $highlight;
+	border-radius: 25px;
+	padding: 0.5rem;
+	img {
+		width: 50%;
+		object-fit: contain;
+		height: 100%;
+		&:hover {
+			transform: none;
+		}
+	}
+	.details {
+		background-color: $transparent;
+		width: 50%;
+		float: right;
+		height: 100%;
+		border-radius: 12px;
+		padding: 1rem;
+		overflow-y: auto;
+	}
+}
+
+h3 {
+	margin-top: 5rem;
+}
+
+.product-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 17rem);
+	.list-item {
+		cursor: pointer;
+		display: flex;
+		flex-direction: column;
+		padding: 0.5rem;
+		background-color: $highlight;
+		margin: 1rem;
+		width: 15rem;
+		max-height: 20rem;
+		img {
+			margin-left: 2rem;
+			&:hover {
+				transform: none;
+			}
+		}
+		.productTitle {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			display: inline-block;
+			color: $text;
+		}
+		transition: all 0.3s ease;
+	}
+	.list-item:hover {
+		transform: scale(1.1);
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.product-list {
+		overflow-x: auto;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+	}
+}

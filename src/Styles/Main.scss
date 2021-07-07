@@ -1,0 +1,18 @@
+$main_color: #231f20;
+$highlight: #bb4430;
+$text: #efe6dd;
+
+@import 'nav';
+@import './home';
+@import './shop';
+@import './login';
+@import './productDetail';
+@import 'cart';
+
+* {
+	color: $text;
+	font-family: 'poppins', sans-serif;
+}
+body {
+	background-color: $main_color;
+}
