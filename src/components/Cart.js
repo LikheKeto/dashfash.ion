@@ -11,20 +11,36 @@ const Cart = ({ setCartItem, cartItem }) => {
 	};
 
 	const addCnt = (item) => {
-		item.cnt += 1;
+		let addedItem = cartItem.filter((i) => i.id === item.id);
+		let index = cartItem.indexOf(addedItem[0]);
+		addedItem[0].cnt += 1;
+		cartItem.splice(index, 1, addedItem[0]);
+		setCartItem((p) => [...p]);
 	};
 	const subCnt = (item) => {
-		item.cnt -= 1;
-		if (item.cnt === 0) {
-			let index = cartItem.indexOf(item);
+		let subItem = cartItem.filter((i) => i.id === item.id);
+		let index = cartItem.indexOf(subItem[0]);
+		subItem[0].cnt -= 1;
+		if (subItem[0].cnt === 0) {
 			cartItem.splice(index, 1);
-			setCartItem(cartItem);
+			return setCartItem((p) => [...p]);
 		}
+		cartItem.splice(index, 1, subItem[0]);
+		setCartItem((p) => [...p]);
 	};
 
 	const orderHandler = () => {
 		setCartItem([]);
 	};
+
+	const sumHandler = () => {
+		let sum = 0;
+		cartItem.forEach((item) => {
+			sum = sum + item.price * item.cnt;
+		});
+		return sum.toFixed(3);
+	};
+	sumHandler();
 
 	return (
 		<div className="cover no-touch">
@@ -50,6 +66,7 @@ const Cart = ({ setCartItem, cartItem }) => {
 						</p>
 					</div>
 				))}
+				<p>Total: ${sumHandler()}</p>
 				<button onClick={orderHandler} className="btn">
 					Order now
 				</button>

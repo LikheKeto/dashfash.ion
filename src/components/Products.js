@@ -5,16 +5,15 @@ const Products = ({ products, setSelectedProduct, setCartItem, cartItem }) => {
 		setSelectedProduct([product]);
 	};
 	const cartHandler = (product) => {
-		let item = cartItem.filter((item) => item.id === product.id);
+		let item = cartItem.filter((i) => i.id === product.id);
 		if (item.length === 0) {
 			product.cnt = 1;
 			setCartItem([...cartItem, product]);
 		} else {
+			let index = cartItem.indexOf(item[0]);
 			item[0].cnt += 1;
-			let index = cartItem.indexOf(item);
 			cartItem.splice(index, 1, item[0]);
-			const newCart = cartItem;
-			setCartItem(newCart);
+			setCartItem((p) => [...p]);
 		}
 	};
 

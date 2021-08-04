@@ -26,7 +26,7 @@ const Carousal = ({ products }) => {
 						</div>
 					</div>
 				</div>
-				<div className="col-md-6 col-sm-12">
+				<div className="col-md-6 col-sm-12 center-home">
 					<div className="product-list">
 						{products.map((product) => (
 							<div

@@ -9,7 +9,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const Routes = () => {
 	const [cartItem, setCartItem] = useState([]);
-	console.log(cartItem);
 	return (
 		<>
 			<Router>
